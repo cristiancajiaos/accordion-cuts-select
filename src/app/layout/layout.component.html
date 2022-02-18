@@ -1,3 +1,28 @@
-<ng-select [(ngModel)]="selectedCar">
-  <ng-option *ngFor="let car of cars" [value]="car.id">{{car.name}}</ng-option>
-</ng-select>
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+  <ngb-panel id="static-1" title="Simple">
+    <ng-template ngbPanelHeader>
+      <div class="d-grid accordion-header">
+        <button ngbPanelToggle class="btn btn-success">
+          Filtros
+        </button>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <form>
+        <div>
+          <div class="row">
+            <div class="col-12 col-lg-4">
+              <app-selector></app-selector>
+            </div>
+            <div class="col-12 col-lg-4">
+              <app-selector></app-selector>
+            </div>
+            <div class="col-12 col-lg-4">
+              <app-selector></app-selector>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
